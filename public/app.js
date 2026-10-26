@@ -227,7 +227,10 @@
     var reason = 'Run the comparison to review the order terms.';
     if (dirty) reason = 'Save and compare the edited documents before continuing.';
     else if (completed) { title = 'Payment verified'; reason = 'PayPal confirmed a completed capture for this acknowledged revision.'; }
-    else if (payment === 'stale') reason = 'This order changed. The previous checkout is stale; compare and acknowledge the new revision.';
+    else if (payment === 'stale') {
+      if (ack) { title = 'Ready for new checkout'; reason = 'Both demo personas acknowledged this revision. The previous checkout is stale; create a new Sandbox order.'; }
+      else reason = clear ? 'The previous checkout is stale. Record both demo acknowledgements for this revision before creating a new Sandbox order.' : 'This order changed. The previous checkout is stale; compare and acknowledge the new revision.';
+    }
     else if (payment === 'pending') { title = 'Payment pending'; reason = 'PayPal has not confirmed a completed capture. No completed payment is recorded.'; }
     else if (ack) { title = payment === 'created' ? 'Approval requested' : 'Ready for checkout'; reason = payment === 'created' ? 'Complete the Sandbox approval, then verify the payment for this revision.' : 'Both demo personas acknowledged the same revision. The server can create the test order.'; }
     else if (clear) { title = 'Terms aligned'; reason = 'Review the evidence and record both demo acknowledgements to unlock checkout.'; }
