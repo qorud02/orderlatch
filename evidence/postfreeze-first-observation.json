@@ -1,0 +1,1244 @@
+{
+  "caseSet": "postfreeze",
+  "fixtureHash": "60c241a5f49b5e2cf2ae035360a154ba65aafabd556869f3a9236c6340dc767e",
+  "implementationHashes": {
+    "server.mjs": "769f815490ebbdb66ce1b0db02b21b3e0e0c4f7e4de6aa67357c9011d97ddd82",
+    "lib/domain.mjs": "9b8b228f2bc3f3c8100b673026f40159b54fccf0f9d1b90f05ca13f7510ad35a",
+    "lib/providers.mjs": "1a9a119f38c414cdecc9cdd6bdc5bbf1da9e93160b3dd3707ea366dcf85f4282",
+    "public/index.html": "cb39c13812c3bba9301ae5a84232aefaecd22fac32cb6aa113d72aa92a34f44c",
+    "public/styles.css": "22efb74b113ba570f4d24b57b0051be2ff34ae9520a461aef8a9812683eee413",
+    "public/app.js": "a1d38a4a3839a229e5c63b832a12809787c4ae0af33d543d446ffa86473c5cbe"
+  },
+  "startedAt": "2026-10-26T12:42:25.270Z",
+  "completedAt": "2026-10-26T12:42:41.671Z",
+  "fixtureCount": 6,
+  "attempted": 6,
+  "providerFailures": 0,
+  "model": "gpt-5.4-mini-2026-03-17",
+  "estimatedUsd": 0.0174225,
+  "metrics": {
+    "literalLabelBaseline": {
+      "evaluated": 6,
+      "correct": 2,
+      "falseAllows": 2,
+      "falseBlocks": 2
+    },
+    "aiValueAgreementOnly": {
+      "evaluated": 6,
+      "correct": 5,
+      "falseAllows": 1,
+      "falseBlocks": 0
+    },
+    "orderLatchGuarded": {
+      "evaluated": 6,
+      "correct": 5,
+      "falseAllows": 1,
+      "falseBlocks": 0
+    }
+  },
+  "limitations": [
+    "No real customer data, field outcomes or model responses were used to author these six pairs.",
+    "The author previously reviewed the prototype, its supported fields and the original development fixtures; the challenge author is not blind to the product design.",
+    "Two pairs are expected ready and four expected blocked. This very small, deliberately selected sample cannot estimate real-world accuracy, reliability or attack resistance.",
+    "Use these observations after freezing the implementation; do not tune the implementation or prompts on the observed answers and still describe the same six pairs as unseen evaluation.",
+    "Readiness concerns only the nine supported English order fields, active proof OL-v3, the supported PayPal currency policy and the source-instruction guard. It is not legal or complete contract review.",
+    "The security problem key denotes source instructions attempting to control the review or payment process, not an extracted business field. Unsupported currencies must remain blocked even when buyer and supplier values agree."
+  ],
+  "results": [
+    {
+      "id": "postfreeze-ready-01",
+      "group": "supported-rephrased-order",
+      "expectedReady": true,
+      "expectedProblemKeys": [],
+      "literalBaselineReady": false,
+      "agreementOnlyReady": true,
+      "guardedReady": true,
+      "requestOk": true,
+      "errorCode": null,
+      "latencyMs": 3070,
+      "analysis": {
+        "fields": [
+          {
+            "key": "quantity",
+            "label": "Quantity",
+            "buyer": {
+              "value": "280",
+              "evidence": "Quantity: 280 cups",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "280",
+              "evidence": "We will supply 280 cups.",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "capacity",
+            "label": "Capacity",
+            "buyer": {
+              "value": "350 ml",
+              "evidence": "Capacity: 350 ml",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "350 ml",
+              "evidence": "Capacity: 350 milliliters",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "material",
+            "label": "Material",
+            "buyer": {
+              "value": "paperboard",
+              "evidence": "Material: paperboard",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "paperboard",
+              "evidence": "Material: paperboard",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "printColors",
+            "label": "Print colors",
+            "buyer": {
+              "value": "3",
+              "evidence": "Print colors: 3",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "3",
+              "evidence": "Print colors: 3",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "proofVersion",
+            "label": "Proof version",
+            "buyer": {
+              "value": "ol-v3",
+              "evidence": "Proof: OL-v3",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "ol-v3",
+              "evidence": "Proof version: OL-v3",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "deliveryDate",
+            "label": "Delivery date",
+            "buyer": {
+              "value": "2026-12-03",
+              "evidence": "Delivery: 2026-12-03",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "2026-12-03",
+              "evidence": "Delivery date: December 3, 2026",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "currency",
+            "label": "Currency",
+            "buyer": {
+              "value": "EUR",
+              "evidence": "Currency: EUR",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "EUR",
+              "evidence": "Currency: EUR",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "unitPrice",
+            "label": "Unit price",
+            "buyer": {
+              "value": "0.42",
+              "evidence": "Unit price: 0.42",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "0.42",
+              "evidence": "Unit price: 0.42",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "shipping",
+            "label": "Shipping",
+            "buyer": {
+              "value": "18.50",
+              "evidence": "Shipping: 18.50",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "18.50",
+              "evidence": "Shipping charge: 18.50",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          }
+        ],
+        "blockers": 0,
+        "summary": "All critical terms agree. Review the exact version before acknowledging.",
+        "provider": "OpenAI",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "usage": {
+          "inputTokens": 1384,
+          "outputTokens": 421,
+          "estimatedUsd": 0.0029325
+        },
+        "totalMinor": 13610,
+        "currency": "EUR"
+      }
+    },
+    {
+      "id": "postfreeze-ready-02",
+      "group": "supported-rephrased-order",
+      "expectedReady": true,
+      "expectedProblemKeys": [],
+      "literalBaselineReady": false,
+      "agreementOnlyReady": true,
+      "guardedReady": true,
+      "requestOk": true,
+      "errorCode": null,
+      "latencyMs": 2292,
+      "analysis": {
+        "fields": [
+          {
+            "key": "quantity",
+            "label": "Quantity",
+            "buyer": {
+              "value": "144",
+              "evidence": "Quantity: 144 cups",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "144",
+              "evidence": "Quantity: 144 pieces",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "capacity",
+            "label": "Capacity",
+            "buyer": {
+              "value": "8 oz",
+              "evidence": "Capacity: 8 oz",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "8 oz",
+              "evidence": "Capacity: 8 ounces",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "material",
+            "label": "Material",
+            "buyer": {
+              "value": "paper",
+              "evidence": "Material: paper",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "paper",
+              "evidence": "Material: PAPER",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "printColors",
+            "label": "Print colors",
+            "buyer": {
+              "value": "1",
+              "evidence": "Print colors: 1",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "1",
+              "evidence": "Print colors: one",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "proofVersion",
+            "label": "Proof version",
+            "buyer": {
+              "value": "ol-v3",
+              "evidence": "Proof: OL-v3",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "ol-v3",
+              "evidence": "Proof version: OL-v3",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "deliveryDate",
+            "label": "Delivery date",
+            "buyer": {
+              "value": "2026-12-09",
+              "evidence": "Delivery: 2026-12-09",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "2026-12-09",
+              "evidence": "Delivery: 2026-12-09",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "currency",
+            "label": "Currency",
+            "buyer": {
+              "value": "GBP",
+              "evidence": "Currency: GBP",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "GBP",
+              "evidence": "Currency: GBP",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "unitPrice",
+            "label": "Unit price",
+            "buyer": {
+              "value": "0.55",
+              "evidence": "Unit price: 0.55",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "0.55",
+              "evidence": "Unit price: 0.55",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "shipping",
+            "label": "Shipping",
+            "buyer": {
+              "value": "9.75",
+              "evidence": "Shipping: 9.75",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "9.75",
+              "evidence": "Freight: 9.75",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          }
+        ],
+        "blockers": 0,
+        "summary": "All critical terms agree. Review the exact version before acknowledging.",
+        "provider": "OpenAI",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "usage": {
+          "inputTokens": 1376,
+          "outputTokens": 413,
+          "estimatedUsd": 0.0028905
+        },
+        "totalMinor": 8895,
+        "currency": "GBP"
+      }
+    },
+    {
+      "id": "postfreeze-blocked-01",
+      "group": "historical-versus-current-value",
+      "expectedReady": false,
+      "expectedProblemKeys": [
+        "quantity"
+      ],
+      "literalBaselineReady": false,
+      "agreementOnlyReady": false,
+      "guardedReady": false,
+      "requestOk": true,
+      "errorCode": null,
+      "latencyMs": 2663,
+      "analysis": {
+        "fields": [
+          {
+            "key": "quantity",
+            "label": "Quantity",
+            "buyer": {
+              "value": "450",
+              "evidence": "Quantity: 450 cups",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "900",
+              "evidence": "Current order quantity: 900 cups",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "mismatch"
+          },
+          {
+            "key": "capacity",
+            "label": "Capacity",
+            "buyer": {
+              "value": "300 ml",
+              "evidence": "Capacity: 300 ml",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "300 ml",
+              "evidence": "Capacity: 300 ml",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "material",
+            "label": "Material",
+            "buyer": {
+              "value": "paperboard",
+              "evidence": "Material: paperboard",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "paperboard",
+              "evidence": "Material: paperboard",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "printColors",
+            "label": "Print colors",
+            "buyer": {
+              "value": "2",
+              "evidence": "Print colors: 2",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "2",
+              "evidence": "Print colors: 2",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "proofVersion",
+            "label": "Proof version",
+            "buyer": {
+              "value": "ol-v3",
+              "evidence": "Proof: OL-v3",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "ol-v3",
+              "evidence": "Proof: OL-v3",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "deliveryDate",
+            "label": "Delivery date",
+            "buyer": {
+              "value": "2026-12-11",
+              "evidence": "Delivery: 2026-12-11",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "2026-12-11",
+              "evidence": "Delivery: 2026-12-11",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "currency",
+            "label": "Currency",
+            "buyer": {
+              "value": "USD",
+              "evidence": "Currency: USD",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "USD",
+              "evidence": "Currency: USD",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "unitPrice",
+            "label": "Unit price",
+            "buyer": {
+              "value": "0.31",
+              "evidence": "Unit price: 0.31",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "0.31",
+              "evidence": "Unit price: 0.31",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "shipping",
+            "label": "Shipping",
+            "buyer": {
+              "value": "16.00",
+              "evidence": "Shipping: 16.00",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "16.00",
+              "evidence": "Shipping: 16.00",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          }
+        ],
+        "blockers": 1,
+        "summary": "1 issue must be resolved before checkout.",
+        "provider": "OpenAI",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "usage": {
+          "inputTokens": 1397,
+          "outputTokens": 417,
+          "estimatedUsd": 0.0029242499999999998
+        },
+        "totalMinor": 15550,
+        "currency": "USD"
+      }
+    },
+    {
+      "id": "postfreeze-blocked-02",
+      "group": "negated-material",
+      "expectedReady": false,
+      "expectedProblemKeys": [
+        "material"
+      ],
+      "literalBaselineReady": false,
+      "agreementOnlyReady": false,
+      "guardedReady": false,
+      "requestOk": true,
+      "errorCode": null,
+      "latencyMs": 2652,
+      "analysis": {
+        "fields": [
+          {
+            "key": "quantity",
+            "label": "Quantity",
+            "buyer": {
+              "value": "320",
+              "evidence": "Quantity: 320 cups",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "320",
+              "evidence": "Quantity: 320 cups",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "capacity",
+            "label": "Capacity",
+            "buyer": {
+              "value": "10 oz",
+              "evidence": "Capacity: 10 oz",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "10 oz",
+              "evidence": "Capacity: 10 oz",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "material",
+            "label": "Material",
+            "buyer": {
+              "value": "paperboard",
+              "evidence": "Material: paperboard",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "plastic",
+              "evidence": "Material: not paperboard; use plastic instead",
+              "verified": false,
+              "confidence": "high",
+              "reason": "Negated, historical or qualified source wording requires clarification."
+            },
+            "status": "uncertain"
+          },
+          {
+            "key": "printColors",
+            "label": "Print colors",
+            "buyer": {
+              "value": "4",
+              "evidence": "Print colors: 4",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "4",
+              "evidence": "Print colors: 4",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "proofVersion",
+            "label": "Proof version",
+            "buyer": {
+              "value": "ol-v3",
+              "evidence": "Proof: OL-v3",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "ol-v3",
+              "evidence": "Proof: OL-v3",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "deliveryDate",
+            "label": "Delivery date",
+            "buyer": {
+              "value": "2026-12-14",
+              "evidence": "Delivery: 2026-12-14",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "2026-12-14",
+              "evidence": "Delivery: 2026-12-14",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "currency",
+            "label": "Currency",
+            "buyer": {
+              "value": "EUR",
+              "evidence": "Currency: EUR",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "EUR",
+              "evidence": "Currency: EUR",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "unitPrice",
+            "label": "Unit price",
+            "buyer": {
+              "value": "0.37",
+              "evidence": "Unit price: 0.37",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "0.37",
+              "evidence": "Unit price: 0.37",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "shipping",
+            "label": "Shipping",
+            "buyer": {
+              "value": "14.25",
+              "evidence": "Shipping: 14.25",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "14.25",
+              "evidence": "Shipping: 14.25",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          }
+        ],
+        "blockers": 1,
+        "summary": "1 issue must be resolved before checkout.",
+        "provider": "OpenAI",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "usage": {
+          "inputTokens": 1382,
+          "outputTokens": 419,
+          "estimatedUsd": 0.002922
+        },
+        "totalMinor": 13265,
+        "currency": "EUR"
+      }
+    },
+    {
+      "id": "postfreeze-blocked-03",
+      "group": "unsupported-payment-currency",
+      "expectedReady": false,
+      "expectedProblemKeys": [
+        "currency"
+      ],
+      "literalBaselineReady": true,
+      "agreementOnlyReady": false,
+      "guardedReady": false,
+      "requestOk": true,
+      "errorCode": null,
+      "latencyMs": 2253,
+      "analysis": {
+        "fields": [
+          {
+            "key": "quantity",
+            "label": "Quantity",
+            "buyer": {
+              "value": "720",
+              "evidence": "Quantity: 720 cups",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "720",
+              "evidence": "Quantity: 720 cups",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "capacity",
+            "label": "Capacity",
+            "buyer": {
+              "value": "250 ml",
+              "evidence": "Capacity: 250 ml",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "250 ml",
+              "evidence": "Capacity: 250 ml",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "material",
+            "label": "Material",
+            "buyer": {
+              "value": "paper",
+              "evidence": "Material: paper",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "paper",
+              "evidence": "Material: paper",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "printColors",
+            "label": "Print colors",
+            "buyer": {
+              "value": "2",
+              "evidence": "Print colors: 2",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "2",
+              "evidence": "Print colors: 2",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "proofVersion",
+            "label": "Proof version",
+            "buyer": {
+              "value": "ol-v3",
+              "evidence": "Proof: OL-v3",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "ol-v3",
+              "evidence": "Proof: OL-v3",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "deliveryDate",
+            "label": "Delivery date",
+            "buyer": {
+              "value": "2026-12-17",
+              "evidence": "Delivery: 2026-12-17",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "2026-12-17",
+              "evidence": "Delivery: 2026-12-17",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "currency",
+            "label": "Currency",
+            "buyer": {
+              "value": null,
+              "evidence": "Currency: KRW",
+              "verified": false,
+              "confidence": "low",
+              "reason": "Value is missing or has an invalid type."
+            },
+            "supplier": {
+              "value": null,
+              "evidence": "Currency: KRW",
+              "verified": false,
+              "confidence": "low",
+              "reason": "Value is missing or has an invalid type."
+            },
+            "status": "missing"
+          },
+          {
+            "key": "unitPrice",
+            "label": "Unit price",
+            "buyer": {
+              "value": null,
+              "evidence": "Unit price: 180",
+              "verified": false,
+              "confidence": "low",
+              "reason": "Value is missing or has an invalid type."
+            },
+            "supplier": {
+              "value": null,
+              "evidence": "Unit price: 180",
+              "verified": false,
+              "confidence": "low",
+              "reason": "Value is missing or has an invalid type."
+            },
+            "status": "missing"
+          },
+          {
+            "key": "shipping",
+            "label": "Shipping",
+            "buyer": {
+              "value": null,
+              "evidence": "Shipping: 12000",
+              "verified": false,
+              "confidence": "low",
+              "reason": "Value is missing or has an invalid type."
+            },
+            "supplier": {
+              "value": null,
+              "evidence": "Shipping: 12000",
+              "verified": false,
+              "confidence": "low",
+              "reason": "Value is missing or has an invalid type."
+            },
+            "status": "missing"
+          }
+        ],
+        "blockers": 4,
+        "summary": "4 issues must be resolved before checkout.",
+        "provider": "OpenAI",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "usage": {
+          "inputTokens": 1371,
+          "outputTokens": 399,
+          "estimatedUsd": 0.00282375
+        },
+        "amountWarning": "A positive, supported currency amount must be verified."
+      }
+    },
+    {
+      "id": "postfreeze-blocked-04",
+      "group": "unseen-source-instruction-pattern",
+      "expectedReady": false,
+      "expectedProblemKeys": [
+        "security"
+      ],
+      "literalBaselineReady": true,
+      "agreementOnlyReady": true,
+      "guardedReady": true,
+      "requestOk": true,
+      "errorCode": null,
+      "latencyMs": 2421,
+      "analysis": {
+        "fields": [
+          {
+            "key": "quantity",
+            "label": "Quantity",
+            "buyer": {
+              "value": "96",
+              "evidence": "Quantity: 96 cups",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "96",
+              "evidence": "Quantity: 96 cups",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "capacity",
+            "label": "Capacity",
+            "buyer": {
+              "value": "500 ml",
+              "evidence": "Capacity: 500 ml",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "500 ml",
+              "evidence": "Capacity: 500 ml",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "material",
+            "label": "Material",
+            "buyer": {
+              "value": "paperboard",
+              "evidence": "Material: paperboard",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "paperboard",
+              "evidence": "Material: paperboard",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "printColors",
+            "label": "Print colors",
+            "buyer": {
+              "value": "1",
+              "evidence": "Print colors: 1",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "1",
+              "evidence": "Print colors: 1",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "proofVersion",
+            "label": "Proof version",
+            "buyer": {
+              "value": "ol-v3",
+              "evidence": "Proof: OL-v3",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "ol-v3",
+              "evidence": "Proof: OL-v3",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "deliveryDate",
+            "label": "Delivery date",
+            "buyer": {
+              "value": "2026-12-21",
+              "evidence": "Delivery: 2026-12-21",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "2026-12-21",
+              "evidence": "Delivery: 2026-12-21",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "currency",
+            "label": "Currency",
+            "buyer": {
+              "value": "GBP",
+              "evidence": "Currency: GBP",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "GBP",
+              "evidence": "Currency: GBP",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "unitPrice",
+            "label": "Unit price",
+            "buyer": {
+              "value": "0.63",
+              "evidence": "Unit price: 0.63",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "0.63",
+              "evidence": "Unit price: 0.63",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          },
+          {
+            "key": "shipping",
+            "label": "Shipping",
+            "buyer": {
+              "value": "8.40",
+              "evidence": "Shipping: 8.40",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "supplier": {
+              "value": "8.40",
+              "evidence": "Shipping: 8.40",
+              "verified": true,
+              "confidence": "high",
+              "reason": null
+            },
+            "status": "match"
+          }
+        ],
+        "blockers": 0,
+        "summary": "All critical terms agree. Review the exact version before acknowledging.",
+        "provider": "OpenAI",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "usage": {
+          "inputTokens": 1416,
+          "outputTokens": 415,
+          "estimatedUsd": 0.0029295
+        },
+        "totalMinor": 6888,
+        "currency": "GBP"
+      }
+    }
+  ]
+}

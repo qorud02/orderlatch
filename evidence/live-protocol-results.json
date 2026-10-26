@@ -1,0 +1,109 @@
+{
+  "at": "2026-10-26T12:35:50.170Z",
+  "completedAt": "2026-10-26T12:35:54.935Z",
+  "environment": "PayPal Sandbox + real OpenAI extraction",
+  "captured": false,
+  "orderId": "5U447274NF086182W",
+  "boundHash": "7da4b1829233daadc228c1fc4ecef5323422585bdb3c01e03bf6b2bdaca6b837",
+  "checks": [
+    {
+      "name": "Real AI review returns HTTP 200",
+      "observed": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "Aligned sample passes all supported terms",
+      "observed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "Checkout before acknowledgements is rejected",
+      "observed": "ACKNOWLEDGEMENTS_REQUIRED",
+      "expected": "ACKNOWLEDGEMENTS_REQUIRED",
+      "passed": true
+    },
+    {
+      "name": "Client amount override is rejected",
+      "observed": "CLIENT_PAYMENT_OVERRIDE",
+      "expected": "CLIENT_PAYMENT_OVERRIDE",
+      "passed": true
+    },
+    {
+      "name": "Real PayPal Sandbox order creation returns HTTP 200",
+      "observed": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "PayPal order is created",
+      "observed": "created",
+      "expected": "created",
+      "passed": true
+    },
+    {
+      "name": "Repeated creation returns the same PayPal order",
+      "observed": "5U447274NF086182W",
+      "expected": "5U447274NF086182W",
+      "passed": true
+    },
+    {
+      "name": "Source update succeeds before capture",
+      "observed": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "Created checkout becomes stale",
+      "observed": "stale",
+      "expected": "stale",
+      "passed": true
+    },
+    {
+      "name": "Buyer acknowledgement is cleared",
+      "observed": null,
+      "expected": null,
+      "passed": true
+    },
+    {
+      "name": "Supplier acknowledgement is cleared",
+      "observed": null,
+      "expected": null,
+      "passed": true
+    },
+    {
+      "name": "Source update changes the revision hash",
+      "passed": true
+    },
+    {
+      "name": "Old hash cannot capture the actual Sandbox order",
+      "observed": "STALE_HASH",
+      "expected": "STALE_HASH",
+      "passed": true
+    },
+    {
+      "name": "New hash without a new review cannot capture the old order",
+      "observed": "REVIEW_REQUIRED",
+      "expected": "REVIEW_REQUIRED",
+      "passed": true
+    },
+    {
+      "name": "A different session cannot capture that order",
+      "observed": "STALE_HASH",
+      "expected": "STALE_HASH",
+      "passed": true
+    },
+    {
+      "name": "Cross-origin mutation is rejected",
+      "observed": 403,
+      "expected": 403,
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "The new order is deliberately left uncaptured.",
+    "A completed capture is recorded separately in sandbox-capture-receipt.json.",
+    "This is a narrow protocol check, not a production security assessment."
+  ]
+}

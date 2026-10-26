@@ -1,0 +1,27 @@
+{
+  "product": "OrderLatch",
+  "sampleData": true,
+  "caseId": "45962582-bedc-43cd-ae06-2adb928415ac",
+  "revision": 1,
+  "snapshotHash": "7da4b1829233daadc228c1fc4ecef5323422585bdb3c01e03bf6b2bdaca6b837",
+  "acknowledgements": {
+    "buyer": {
+      "hash": "7da4b1829233daadc228c1fc4ecef5323422585bdb3c01e03bf6b2bdaca6b837",
+      "at": "2026-10-26T12:13:53.149Z"
+    },
+    "supplier": {
+      "hash": "7da4b1829233daadc228c1fc4ecef5323422585bdb3c01e03bf6b2bdaca6b837",
+      "at": "2026-10-26T12:13:59.937Z"
+    }
+  },
+  "payment": {
+    "status": "completed",
+    "orderId": "8HN54704UL1731308",
+    "boundHash": "7da4b1829233daadc228c1fc4ecef5323422585bdb3c01e03bf6b2bdaca6b837",
+    "amount": "120.00",
+    "currency": "USD",
+    "captureId": "21A372617R6128104",
+    "completedAt": "2026-10-26T12:33:21.982Z"
+  },
+  "exportedAt": "2026-10-26T12:34:07.501Z"
+}

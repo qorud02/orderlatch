@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#10272c">
+  <meta name="description" content="Review custom-order terms, acknowledge one revision, and keep PayPal Sandbox payment attached to that revision.">
+  <title>OrderLatch — Order review</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to order review</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Workspace navigation">
+      <a class="brand" href="/" aria-label="OrderLatch home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>OrderLatch<span class="brand-dot">.</span></span>
+      </a>
+      <div class="workspace-switch"><span class="workspace-symbol" aria-hidden="true">OL</span><div><strong>Sample workspace</strong><span>Custom production orders</span></div><span aria-hidden="true">⌄</span></div>
+      <span class="nav-label">WORKSPACE</span>
+      <nav>
+        <a class="nav-item active" href="#main" aria-current="page"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="3"/><path d="M7 7h6M7 10h6M7 13h3"/></svg>Order review<span class="nav-number">01</span></a>
+        <a class="nav-item" href="#revision-history"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 6A7 7 0 1 1 3 11M3 3v4h4M10 6v5l3 2"/></svg>Revision history</a>
+      </nav>
+      <div class="sidebar-note"><span class="tiny-dot"></span><strong>Every change has a consequence.</strong><p>Changing the source or proof clears acknowledgements and makes the previous checkout stale.</p></div>
+      <div class="sidebar-footer"><div class="avatar">OL</div><div><strong>Interactive prototype</strong><span>Fictional sample orders</span></div></div>
+    </aside>
+
+    <div class="main-shell">
+      <header class="topbar">
+        <div class="breadcrumbs"><span>Workspace</span><span class="crumb-separator">/</span><strong>Order review</strong></div>
+        <div class="connection-badges"><span class="connection" id="ai-connection"><i></i>AI checking</span><span class="sandbox-badge"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m8 1 6 3v4c0 3-3 5-6 7-3-2-6-4-6-7V4z"/><path d="m5.5 8 1.5 1.5L10.5 6"/></svg>Sandbox only</span></div>
+      </header>
+
+      <main id="main" tabindex="-1">
+        <div class="page-heading"><div><div class="eyebrow">THE REVIEW DESK</div><h1>Agree on the order.<br class="mobile-break"> Then release the payment.</h1><p class="page-intro">Compare the request with the quote. Keep both acknowledgements and checkout attached to the same revision.</p></div><span class="case-tag" id="case-tag">SAMPLE ORDER</span></div>
+
+        <div class="sample-toolbar"><div class="sample-description"><span class="sample-pill">TRY A SAMPLE</span><span>Explore what can block a payment.</span></div><div class="sample-actions"><label class="sr-only" for="scenario">Choose a fictional sample</label><select id="scenario"><option value="mismatch">Conflicting quote</option><option value="aligned">Aligned order</option><option value="ambiguous">Ambiguous currency</option><option value="injection">Embedded instruction</option></select><button class="button button-secondary button-small" id="load-sample" type="button">Load sample<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button></div></div>
+
+        <div id="connection-notice" class="notice notice-info" hidden></div>
+        <div id="feedback" class="notice" role="status" aria-live="polite" hidden></div>
+
+        <div class="progress-strip" aria-label="Order progress"><div class="progress-step current" id="step-compare"><span>01</span><div><strong>Compare</strong><small>Review the evidence</small></div></div><span class="progress-line"></span><div class="progress-step" id="step-approve"><span>02</span><div><strong>Acknowledge</strong><small>Lock one revision</small></div></div><span class="progress-line"></span><div class="progress-step" id="step-pay"><span>03</span><div><strong>Pay</strong><small>Verify with PayPal</small></div></div></div>
+
+        <div class="desk-grid">
+          <div class="review-column">
+            <section class="panel sources-panel" aria-labelledby="sources-heading">
+              <div class="panel-heading"><div><span class="section-index">01</span><h2 id="sources-heading">Source documents</h2></div><div class="revision-pill" id="revision-pill">Revision —</div></div>
+              <div class="documents-grid">
+                <div class="document"><div class="document-heading"><span class="document-avatar buyer-avatar">B</span><div><label for="buyer-text">Buyer request</label><span>The intended order</span></div><span class="document-format">TEXT</span></div><textarea id="buyer-text" spellcheck="false" aria-describedby="source-help" placeholder="Paste the buyer’s quantity, capacity, proof version, delivery date, currency and prices."></textarea></div>
+                <div class="document"><div class="document-heading"><span class="document-avatar supplier-avatar">S</span><div><label for="supplier-text">Supplier quote</label><span>The proposed order</span></div><span class="document-format">TEXT</span></div><textarea id="supplier-text" spellcheck="false" aria-describedby="source-help" placeholder="Paste the supplier’s quoted terms here."></textarea></div>
+              </div>
+              <div class="source-footer"><span id="source-help"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M8 7v4M8 4.5v.5"/></svg>Exact source excerpts support each extracted value.</span><div class="source-buttons"><span class="unsaved-tag" id="unsaved-tag" hidden>Unsaved changes</span><button class="button button-quiet button-small" id="undo-edits" type="button" hidden>Discard edits</button><button class="button button-secondary button-small" id="save-sources" type="button" disabled>Save changes</button></div></div>
+              <div class="proof-strip"><div class="proof-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7zM14 3v5h4M10 12h5M10 16h5"/></svg></div><div class="proof-copy"><strong>Production proof <span id="proof-label">—</span></strong><span id="proof-fingerprint">No proof loaded</span></div><label class="button button-quiet button-small upload-label" for="proof-file">Replace proof<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 11V2M4.5 5.5 8 2l3.5 3.5M3 10v4h10v-4"/></svg></label><input id="proof-file" type="file" accept=".txt,.png,.jpg,.jpeg,.pdf" class="sr-only"><button class="icon-button" id="new-sample-proof" type="button" title="Create a changed fictional proof to test revision locking" aria-label="Test a new sample proof revision"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 8a6 6 0 1 0 .1 4M16 3v5h-5"/></svg></button></div>
+            </section>
+
+            <section class="panel comparison-panel" aria-labelledby="comparison-heading">
+              <div class="panel-heading comparison-heading"><div><span class="section-index">02</span><h2 id="comparison-heading">Evidence comparison</h2><span class="count-badge" id="comparison-count" hidden></span></div><button class="button button-primary" id="analyze" type="button"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m10 2 2.2 5.8L18 10l-5.8 2.2L10 18l-2.2-5.8L2 10l5.8-2.2z"/></svg><span id="analyze-label">Run AI comparison</span></button></div>
+              <div class="comparison-overview" id="comparison-overview" hidden><div class="overview-icon" id="overview-icon" aria-hidden="true">!</div><div><strong id="overview-title"></strong><p id="overview-description"></p></div><span id="model-label" class="model-label"></span></div>
+              <div id="comparison-empty" class="empty-state"><div class="empty-illustration" aria-hidden="true"><span class="mini-document">A<span></span><span></span><span></span></span><span class="mini-connector">⇄</span><span class="mini-document second">B<span></span><span></span><span></span></span></div><h3>Read both sides before money moves.</h3><p>Run a comparison to extract the order terms and their source evidence. Missing or conflicting terms keep checkout closed.</p></div>
+              <div class="table-wrap" id="comparison-table-wrap" hidden><table class="comparison-table"><thead><tr><th scope="col">ORDER TERM</th><th scope="col">BUYER REQUEST</th><th scope="col">SUPPLIER QUOTE</th><th scope="col">RESULT</th></tr></thead><tbody id="comparison-rows"></tbody></table></div>
+              <div class="comparison-footer"><span><span class="legend-dot"></span>Exact evidence checked</span><span>AI proposes. Server rules decide whether checkout opens.</span></div>
+            </section>
+
+            <section class="panel history-panel" id="revision-history" aria-labelledby="history-heading"><div class="panel-heading"><div><span class="section-index">03</span><h2 id="history-heading">Revision history</h2></div><span class="quiet-label">THIS SAMPLE ORDER</span></div><ol id="history-list" class="history-list"><li class="history-placeholder">The order history will appear here.</li></ol></section>
+          </div>
+
+          <aside class="decision-column" aria-label="Acknowledgements and checkout">
+            <section class="decision-card"><div class="decision-topline"><span class="eyebrow">PAYMENT GATE</span><span class="lock-symbol" aria-hidden="true"><svg viewBox="0 0 20 20"><rect x="4" y="8" width="12" height="9" rx="2"/><path d="M6.5 8V5a3.5 3.5 0 0 1 7 0v3M10 11v3"/></svg></span></div><h2 id="gate-title">Checkout paused</h2><p id="gate-reason">Run the comparison to review the order terms.</p><div class="order-total"><span>Order total</span><div id="order-total">—<small>Compare to calculate</small></div></div><div class="gate-checklist"><div id="check-evidence"><span class="check-indicator">1</span><span>All terms match their evidence</span></div><div id="check-acknowledgements"><span class="check-indicator">2</span><span>Both personas acknowledge this revision</span></div><div id="check-payment"><span class="check-indicator">3</span><span>PayPal verifies the bound order</span></div></div><div class="revision-seal"><span>Current revision seal</span><code id="revision-seal">Awaiting comparison</code><span id="revision-seal-note">A source or proof change creates a new seal.</span></div></section>
+
+            <section class="panel acknowledgement-panel" aria-labelledby="acknowledgement-heading"><div class="side-panel-heading"><h2 id="acknowledgement-heading">Two sides. One revision.</h2><p>Demo personas in the same sample session.</p></div><div class="ack-row"><span class="document-avatar buyer-avatar">B</span><div><strong>Demo buyer</strong><span id="buyer-ack-status">Review pending</span></div><span class="ack-state" id="buyer-ack-icon" aria-hidden="true">○</span></div><button class="button button-secondary button-full" id="approve-buyer" type="button" disabled>Acknowledge as buyer</button><div class="ack-divider"></div><div class="ack-row"><span class="document-avatar supplier-avatar">S</span><div><strong>Demo supplier</strong><span id="supplier-ack-status">Review pending</span></div><span class="ack-state" id="supplier-ack-icon" aria-hidden="true">○</span></div><button class="button button-secondary button-full" id="approve-supplier" type="button" disabled>Acknowledge as supplier</button><p class="small-note">These sample acknowledgements demonstrate revision locking.</p></section>
+
+            <section class="panel payment-panel" aria-labelledby="payment-heading"><div class="side-panel-heading"><h2 id="payment-heading">PayPal test checkout</h2><p>Only the server sets the order amount.</p></div><div class="payment-state" id="payment-state"><span class="tiny-dot"></span><span id="payment-status-label">Waiting for review</span></div><button class="button button-primary button-full" id="create-order" type="button" disabled>Create PayPal test order<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button><a class="button button-paypal button-full" id="open-paypal" target="_blank" rel="noopener noreferrer" hidden>Open Sandbox approval<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9 2h5v5M14 2 7 9M6 3H2v11h11v-4"/></svg></a><p class="payment-instruction" id="payment-instruction" hidden>Approve the test payment in PayPal Sandbox, then return here to verify it.</p><button class="button button-secondary button-full" id="capture-order" type="button" hidden>Verify &amp; capture test payment</button><dl class="payment-receipt" id="payment-receipt" hidden></dl><button class="button button-quiet button-full" id="download-receipt" type="button" hidden>Download review receipt</button><p class="sandbox-note"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m8 1 6 3v4c0 3-3 5-6 7-3-2-6-4-6-7V4z"/><path d="m5.5 8 1.5 1.5L10.5 6"/></svg>Sandbox transactions use test funds.</p></section>
+          </aside>
+        </div>
+        <footer class="page-footer"><span>OrderLatch<span class="brand-dot">.</span> <span class="footer-separator">/</span> Custom-order clarity, before checkout.</span><span>Interactive prototype · Fictional sample data</span></footer>
+      </main>
+    </div>
+  </div>
+  <div id="busy-overlay" class="busy-toast" role="status" aria-live="polite" hidden><span class="spinner"></span><span id="busy-label">Working…</span></div>
+</body>
+</html>

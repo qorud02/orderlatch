@@ -1,0 +1,37 @@
+✔ aligned evidence resolves all nine critical fields and computes exact unit-price total (573.59ms)
+✔ three independent supplier discrepancies remain blockers (116.4436ms)
+✔ fabricated quote, substring number, ambiguous currency and low confidence cannot pass (24.4037ms)
+✔ decimal money is exact and unsupported fractional KRW is rejected (185.0052ms)
+✔ current hash and both demo acknowledgements are independently required (24.6498ms)
+✔ source revision invalidates analysis, both acknowledgements and existing checkout (15.8849ms)
+✔ late AI result and document instruction override cannot unlock checkout (167.3528ms)
+✔ pending or completed payment locks source revisions (87.0255ms)
+✔ concurrent budget reservations cannot oversubscribe the configured limit (6.1809ms)
+✔ missing provider credentials return 503 without mock success or outbound calls (85.0132ms)
+✔ HTTP sessions are isolated and cross-origin mutations are rejected (2085.6351ms)
+✔ HTTP checkout rejects price overrides, deduplicates create and serializes double capture (542.4934ms)
+✔ HTTP authoritative amount, currency and version mismatches block capture (1140.651ms)
+✔ HTTP capture uncertainty locks edits then reconciles the same authoritative order (644.7611ms)
+✔ HTTP old hash cannot be acknowledged or paid after proof bytes change (365.3854ms)
+✔ HTTP late review cannot install after reset reuses revision number one (223.7498ms)
+✔ HTTP absent AI config reports unavailable rather than installing fixture analysis (116.9434ms)
+✔ active artwork version and complete identifier evidence must match (6.0075ms)
+✔ numeric evidence must bind its own field rather than reuse another field number (3.1685ms)
+✔ natural English order rephrasing preserves explicit numeric semantics (4.6638ms)
+✔ HTTP completed PayPal order with pending capture remains locked until authoritative completion (2413.2185ms)
+✔ historical and negated source context cannot be laundered through a shorter quote (1.9174ms)
+✔ conflicting current numbers block even when an individually valid line is quoted (99.937ms)
+✔ HTTP any existing unverified capture locks edits and never initiates another capture (932.6821ms)
+✔ explicit number words, shipping charge and lowercase currency retain verified evidence (4.8725ms)
+✔ named-month delivery dates normalize exactly without accepting a changed day (14.7356ms)
+✔ capacity decimal spellings and full unit names compare numerically without unit conversion (2.694ms)
+✔ unsupported KRW source blocks checkout while supported USD remains ready (71.7062ms)
+✔ imperative review overrides block while ordinary commercial delivery language remains usable (57.9711ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 29
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 12580.6527
